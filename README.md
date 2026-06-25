@@ -8,10 +8,8 @@ The focus of this project is simple gameplay, clean UI interactions, and a nosta
 
 Open `index.html` in a browser to run the project locally.
 
-If you deploy it with GitHub Pages, add your live link here:
-
 ```text
-https://your-username.github.io/your-repository-name/
+(https://rimi-hash.github.io/retro-arcade/)
 ```
 
 ## Games Included
@@ -62,10 +60,10 @@ assets/screenshots/
 Then use image links like these:
 
 ```md
-![Home Page](assets/screenshots/home.png)
-![Tic Tac Toe](assets/screenshots/tic-tac-toe.png)
-![Memory Cards](assets/screenshots/memory-cards.png)
-![Rock Paper Scissors](assets/screenshots/rock-paper-scissors.png)
+![Home Page](/screenshots/home.png)
+![Tic Tac Toe](/screenshots/tic-tac-toe.png)
+![Memory Cards](/screenshots/memory-cards.png)
+![Rock Paper Scissors](/screenshots/rock-paper-scissors.png)
 ```
 
 ## Tech Stack
