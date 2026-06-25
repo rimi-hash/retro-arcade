@@ -54,7 +54,7 @@ https://rimi-hash.github.io/retro-arcade/
 Screenshots can make the repository look more complete on GitHub. Add your images inside a folder like:
 
 ```text
-assets/screenshots/
+screenshots/
 ```
 
 Then use image links like these:
