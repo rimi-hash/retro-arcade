@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Arcade Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="logo">RETRO ARCADE</h1>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+          <li><a href="#tictactoe" class="nav-link" data-section="tictactoe">Tic Tac Toe</a></li>
+          <li><a href="#memory" class="nav-link" data-section="memory">Memory</a></li>
+          <li><a href="#rps" class="nav-link" data-section="rps">Rock Paper Scissors</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- Homepage Section -->
+    <section id="home" class="section active">
+      <div class="container">
+        <div class="hero">
+          <h2 class="section-title glow-cyan">WELCOME TO THE ARCADE</h2>
+          <p class="hero-text">
+            Step into a neon-lit world of classic mini-games. Challenge a friend, test your memory,
+            or battle the computer in a glowing retro arena!
+          </p>
+        </div>
+
+        <h3 class="sub-title glow-magenta">CHOOSE YOUR GAME</h3>
+        <div class="game-cards">
+          <article class="game-card" data-game="tictactoe">
+            <div class="card-icon">X O</div>
+            <h4>Tic Tac Toe</h4>
+            <p>Two-player classic. Get three in a row!</p>
+            <button class="btn btn-cyan play-btn" data-section="tictactoe">Play Now</button>
+          </article>
+          <article class="game-card" data-game="memory">
+            <div class="card-icon">?</div>
+            <h4>Memory Cards</h4>
+            <p>Flip cards and match all the pairs.</p>
+            <button class="btn btn-magenta play-btn" data-section="memory">Play Now</button>
+          </article>
+          <article class="game-card" data-game="rps">
+            <div class="card-icon">✊</div>
+            <h4>Rock Paper Scissors</h4>
+            <p>Beat the computer in this timeless duel.</p>
+            <button class="btn btn-green play-btn" data-section="rps">Play Now</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tic Tac Toe Section -->
+    <section id="tictactoe" class="section">
+      <div class="container">
+        <h2 class="section-title glow-cyan">TIC TAC TOE</h2>
+        <div class="instructions">
+          <h3>How to Play</h3>
+          <p>Enter both player names to start. Players X and O take turns placing marks on the 3×3 grid. The first to get three in a row — horizontally, vertically, or diagonally — wins. If all cells are filled with no winner, it's a draw.</p>
+        </div>
+
+        <div class="game-panel">
+          <div class="player-name-grid">
+            <div class="rps-name-box">
+              <label for="tttPlayerXName" class="rps-name-label">Player X Name</label>
+              <input type="text" id="tttPlayerXName" class="rps-name-input" placeholder="Enter Player X name" maxlength="20">
+            </div>
+            <div class="rps-name-box">
+              <label for="tttPlayerOName" class="rps-name-label">Player O Name</label>
+              <input type="text" id="tttPlayerOName" class="rps-name-input" placeholder="Enter Player O name" maxlength="20">
+            </div>
+          </div>
+          <p class="name-helper-text" id="tttNameMessage">Enter both player names to start the game.</p>
+          <button type="button" class="btn btn-sm btn-outline confirm-name-btn" id="tttConfirmNames">Confirm</button>
+
+          <div class="score-board">
+            <div class="score-item score-x">
+              <span class="score-label" id="tttScoreXLabel">Player X</span>
+              <span class="score-value" id="tttScoreX">0</span>
+            </div>
+            <div class="status-display" id="tttStatus">Player X's turn</div>
+            <div class="score-item score-o">
+              <span class="score-label" id="tttScoreOLabel">Player O</span>
+              <span class="score-value" id="tttScoreO">0</span>
+            </div>
+          </div>
+
+          <div class="ttt-board" id="tttBoard">
+            <button type="button" class="ttt-cell" data-index="0" aria-label="Cell 1"></button>
+            <button type="button" class="ttt-cell" data-index="1" aria-label="Cell 2"></button>
+            <button type="button" class="ttt-cell" data-index="2" aria-label="Cell 3"></button>
+            <button type="button" class="ttt-cell" data-index="3" aria-label="Cell 4"></button>
+            <button type="button" class="ttt-cell" data-index="4" aria-label="Cell 5"></button>
+            <button type="button" class="ttt-cell" data-index="5" aria-label="Cell 6"></button>
+            <button type="button" class="ttt-cell" data-index="6" aria-label="Cell 7"></button>
+            <button type="button" class="ttt-cell" data-index="7" aria-label="Cell 8"></button>
+            <button type="button" class="ttt-cell" data-index="8" aria-label="Cell 9"></button>
+          </div>
+
+          <div class="game-actions">
+            <button class="btn btn-cyan" id="tttRestart">Play Again</button>
+            <button class="btn btn-outline back-btn" data-section="home">Back to Home</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Memory Game Section -->
+    <section id="memory" class="section">
+      <div class="container">
+        <h2 class="section-title glow-magenta">MEMORY CARDS</h2>
+        <div class="instructions">
+          <h3>How to Play</h3>
+          <p>Enter your name to start. Click cards to flip them and find matching pairs. Remember where each symbol is!</p>
+        </div>
+
+        <div class="game-panel">
+          <div class="rps-name-box">
+            <label for="memoryPlayerName" class="rps-name-label">Player Name</label>
+            <input type="text" id="memoryPlayerName" class="rps-name-input" placeholder="Enter your name" maxlength="20">
+          </div>
+          <p class="name-helper-text" id="memoryNameMessage">Enter your name to start the game.</p>
+          <button type="button" class="btn btn-sm btn-outline confirm-name-btn" id="memoryConfirmName">Confirm</button>
+
+          <div class="memory-stats">
+            <div class="stat-box">
+              <span class="stat-label">Moves</span>
+              <span class="stat-value" id="memoryMoves">0</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Time</span>
+              <span class="stat-value" id="memoryTimer">00:00</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Pairs</span>
+              <span class="stat-value" id="memoryPairs">0 / 8</span>
+            </div>
+          </div>
+
+          <div class="memory-board" id="memoryBoard"></div>
+
+          <div class="message-box hidden" id="memorySuccess">
+            <p class="win-message glow-green">YOU WIN!</p>
+            <p>All pairs matched!</p>
+          </div>
+
+          <div class="game-actions">
+            <button class="btn btn-magenta" id="memoryRestart">Play Again</button>
+            <button class="btn btn-outline back-btn" data-section="home">Back to Home</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rock Paper Scissors Section -->
+    <section id="rps" class="section">
+      <div class="container">
+        <h2 class="section-title glow-green">ROCK PAPER SCISSORS</h2>
+        <div class="instructions">
+          <h3>How to Play</h3>
+          <p>Enter your name to start, then play exactly 5 rounds. Rock beats scissors, scissors beats paper, and paper beats rock. After 5 rounds, the match winner is announced. Equal scores mean a match draw.</p>
+        </div>
+
+        <div class="game-panel">
+          <div class="rps-name-box">
+            <label for="rpsPlayerName" class="rps-name-label">Player Name</label>
+            <input type="text" id="rpsPlayerName" class="rps-name-input" placeholder="Enter your name" maxlength="20">
+          </div>
+          <p class="name-helper-text" id="rpsNameMessage">Enter your name to start the game.</p>
+          <button type="button" class="btn btn-sm btn-outline confirm-name-btn" id="rpsConfirmName">Confirm</button>
+
+          <div class="rps-match-info">
+            <div class="stat-box">
+              <span class="stat-label">Round</span>
+              <span class="stat-value" id="rpsRound">0 / 5</span>
+            </div>
+          </div>
+
+          <div class="rps-scores">
+            <div class="score-item">
+              <span class="score-label">You</span>
+              <span class="score-value" id="rpsPlayerScore">0</span>
+            </div>
+            <div class="score-item">
+              <span class="score-label">Computer</span>
+              <span class="score-value" id="rpsComputerScore">0</span>
+            </div>
+            <div class="score-item">
+              <span class="score-label">Draws</span>
+              <span class="score-value" id="rpsDrawScore">0</span>
+            </div>
+          </div>
+
+          <div class="rps-choices-display">
+            <div class="choice-box">
+              <span class="choice-label">Your Choice</span>
+              <span class="choice-emoji" id="rpsPlayerChoice">?</span>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="choice-box">
+              <span class="choice-label">Computer</span>
+              <span class="choice-emoji" id="rpsComputerChoice">?</span>
+            </div>
+          </div>
+
+          <div class="result-display" id="rpsResult">Round 1 — Make your move!</div>
+
+          <div class="message-box hidden" id="rpsMatchResult"></div>
+
+          <div class="rps-buttons" id="rpsButtons">
+            <button type="button" class="btn btn-rps" data-choice="rock">✊ Rock</button>
+            <button type="button" class="btn btn-rps" data-choice="paper">✋ Paper</button>
+            <button type="button" class="btn btn-rps" data-choice="scissors">✌️ Scissors</button>
+          </div>
+
+          <div class="game-actions">
+            <button type="button" class="btn btn-green" id="rpsReset">Play Again</button>
+            <button type="button" class="btn btn-outline back-btn" data-section="home">Back to Home</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Retro Arcade Website - rimi</p>
+  </footer>
+
+  <!-- Win Animation Overlay -->
+  <div class="win-overlay hidden" id="winOverlay">
+    <div class="win-content">
+      <p class="win-big-text" id="winOverlayText">YOU WIN!</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
