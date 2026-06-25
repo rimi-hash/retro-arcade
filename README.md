@@ -9,7 +9,7 @@ The focus of this project is simple gameplay, clean UI interactions, and a nosta
 Open `index.html` in a browser to run the project locally.
 
 ```text
-(https://rimi-hash.github.io/retro-arcade/)
+https://rimi-hash.github.io/retro-arcade/
 ```
 
 ## Games Included
@@ -60,10 +60,10 @@ assets/screenshots/
 Then use image links like these:
 
 ```md
-![Home Page](/screenshots/home.png)
-![Tic Tac Toe](/screenshots/tic-tac-toe.png)
-![Memory Cards](/screenshots/memory-cards.png)
-![Rock Paper Scissors](/screenshots/rock-paper-scissors.png)
+![Home Page] /screenshots/home.png
+![Tic Tac Toe] /screenshots/tic-tac-toe.png
+![Memory Cards] /screenshots/memory-cards.png 
+![Rock Paper Scissors] /screenshots/rock-paper-scissors.png 
 ```
 
 ## Tech Stack
